@@ -1,0 +1,369 @@
+/* Importando uma fonte do Google Fonts para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #950c75; /* Vermelho vivo (Para TÍTULOS H2 e TOTAL) */
+    --secondary-color: #f39c12; /* Laranja da pizza (Para PREÇOS) */
+    --text-color: #34495e; /* Azul escuro quase preto (Para TEXTO NORMAL e CORPO) */
+    --light-bg: #ecf0f1; /* Cinza claro (FUNDO DA PÁGINA) */
+    --dark-bg: #2c3e50; /* Azul escuro (RODAPÉ) */
+    --success-color: #2ecc71; /* Verde (Botão Adicionar) */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    /* Define a cor de texto global. Isso deve resolver a herança. */
+    color: var(--text-color); 
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    /* Fundo Vermelho */
+    background-color: var(--primary-color);
+    /* Texto do Header deve ser Branco, e não a cor de texto padrão */
+    color: white; 
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+main {
+    padding: 40px 0;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    /* Títulos de Seção usam a cor de destaque */
+    color: var(--primary-color); 
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    position: relative;
+}
+
+h2 i {
+    margin-left: 10px;
+    color: var(--secondary-color);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #555; /* Cor neutra para subtítulo */
+    margin-bottom: 25px;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 40px 0;
+}
+
+/* --- LISTA DE MENU (PIZZAS E BEBIDAS) --- */
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.item-details {
+    padding: 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.item-details h3 {
+    font-size: 1.8em;
+    /* Título do item usa primary-color */
+    color: var(--primary-color); 
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.item-details p {
+    font-size: 0.95em;
+    /* Descrições usam cinza suave */
+    color: #666; 
+    margin-bottom: 15px;
+}
+
+.item-price {
+    font-size: 1.5em;
+    /* Preço usa secondary-color */
+    color: var(--secondary-color); 
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* --- BOTÕES --- */
+.add-button {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.add-button:hover {
+    background-color: #27ae60;
+}
+
+.add-button i {
+    margin-right: 5px;
+}
+
+/* --- SEÇÃO MEIA-A-MEIA --- */
+#meia-meia .half-options {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-end; 
+}
+
+#meia-meia .half-options > div {
+    flex: 1 1 250px; 
+    min-width: 180px; 
+}
+
+#meia-meia label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    /* Label usa cor de texto padrão */
+    color: var(--text-color); 
+}
+
+#meia-meia select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    background-color: #fcfcfc;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23777%22%20d%3D%22M287%20197.3l-11.8-11.8c-2.7-2.7-7.1-2.7-9.8%200l-112%20112c-2.7%202.7-7.1%202.7-9.8%200l-112-112c-2.7-2.7-7.1-2.7-9.8%200L5.4%20197.3c-2.7%202.7-7.1%202.7-9.8%200L-6.2%20209c-2.7-2.7-2.7-7.1%200-9.8l128-128c5.3-5.3%2013.8-5.3%2019.1%200l128%20128c2.7%202.7%202.7%207.1%200%209.8L287%20197.3z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+/* --- CARRINHO --- */
+#carrinho-lista {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+#carrinho-lista li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    /* Item do carrinho usa cor de texto padrão */
+    color: var(--text-color); 
+}
+
+#carrinho-lista li button {
+    background-color: #e74c3c; 
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+#carrinho-lista li button:hover {
+    background-color: #c0392b;
+}
+
+.total-carrinho {
+    text-align: right;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-bg); /* O rótulo "Total:" usa cor escura */
+    margin-top: 20px;
+    border-top: 2px solid var(--light-bg);
+    padding-top: 15px;
+}
+
+.total-carrinho span {
+    /* O VALOR total usa a cor de destaque */
+    color: var(--primary-color); 
+}
+
+.checkout-button {
+    width: 100%;
+    background-color: #25d366; 
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.checkout-button:hover {
+    background-color: #128c7e;
+}
+
+.checkout-button i {
+    font-size: 1.5em;
+}
+
+/* --- RODAPÉ E FEEDBACK --- */
+footer {
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+.toast {
+    visibility: hidden; 
+    min-width: 250px;
+    background-color: var(--dark-bg);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 1.1em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animações do Toast */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+/* --- RESPONSIVIDADE BÁSICA --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .menu-list {
+        grid-template-columns: 1fr; 
+    }
+    #meia-meia .half-options {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    #meia-meia .half-options > div {
+        width: 100%;
+    }
+}

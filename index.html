@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Deliciosa - Peça Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🍕 Pizzaria Deliciosa</h1>
+            <p>Seu pedaço de felicidade!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="menu">
+            <h2>Nosso Menu de Pizzas</h2>
+            <div class="menu-list" id="pizza-list"> 
+                </div>
+        </section>
+
+        <hr>
+
+        <section id="bebidas">
+            <h2>Bebidas Geladas <i class="fas fa-glass-martini-alt"></i></h2>
+            <div class="menu-list" id="bebida-list">
+                </div>
+        </section>
+        
+        <hr>
+
+        <section id="meia-meia">
+            <h2>Monte Sua Pizza Meia-a-Meia</h2>
+            <p class="subtitle">Selecione dois sabores para criar sua pizza única. O preço será o do sabor **mais caro**.</p>
+            <div class="half-options">
+                <div>
+                    <label for="metade1">1ª Metade:</label>
+                    <select id="metade1">
+                        <option value="">Selecione um sabor</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="metade2">2ª Metade:</label>
+                    <select id="metade2">
+                        <option value="">Selecione um sabor</option>
+                    </select>
+                </div>
+                <button id="addMeiaMeia" class="add-button">Adicionar Meia-a-Meia <i class="fas fa-plus-circle"></i></button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="carrinho">
+            <h2>Seu Pedido <i class="fas fa-shopping-cart"></i></h2>
+            <ul id="carrinho-lista">
+                <li>Carrinho vazio.</li>
+            </ul>
+            <p class="total-carrinho">Total: R$ <span id="carrinho-total">0,00</span></p>
+            <button id="finalizar-pedido" class="checkout-button">Finalizar Pedido e Enviar para WhatsApp <i class="fab fa-whatsapp"></i></button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pizzaria Deliciosa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="toast-message" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
